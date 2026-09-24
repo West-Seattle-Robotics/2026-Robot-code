@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-//first opmode 2
+//first opmode 222
 @TeleOp(name="My First OpMode", group="Iterative Opmode")
 public class ExampleClass extends OpMode {
 
