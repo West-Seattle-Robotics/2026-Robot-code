@@ -9,13 +9,14 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 //tank drive
 public class Drive
 {
-    private DcMotor frontLeft, frontRight;
+    private DcMotor frontLeft;
+    private DcMotor frontRight;
     public DriveConstants constants = new DriveConstants();
     /** This is the drive class constructor*/
     public Drive()
     {
-        frontLeft = hardwareMap.get(DcMotor.class, constants.frontLeft);
-        frontRight = hardwareMap.get(DcMotor.class, constants.frontRight);
+        frontLeft = hardwareMap.get(DcMotor.class, "FrontLeft");
+        frontRight = hardwareMap.get(DcMotor.class, "FrontRight");
     }
 
     /**set velocity for motors

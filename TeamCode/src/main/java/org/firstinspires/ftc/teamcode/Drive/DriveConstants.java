@@ -5,8 +5,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class DriveConstants
 {
     //Motors
-    public String frontLeft = "Front Left";
-    public String frontRight = "Front Right";
+    public String frontLeft = "FrontLeft";
+    public String frontRight = "FrontRight";
     public String backLeft = "Back Left";
     public String backRight = "Back Right";
 
