@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.collector;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 public class collector {
@@ -17,7 +18,7 @@ public class collector {
     private collectorConstants constants;
 
     /** Collector class that contains the collector motors & methods*/
-    public collector () {
+    public collector (HardwareMap hardwareMap) {
         constants = new collectorConstants();
 
         overHeadMotor = hardwareMap.get(DcMotor.class, constants.overheadID);
@@ -37,5 +38,11 @@ public class collector {
         overHeadMotor.setPower(constants.overheadSpeed);
         agitateMotorLeft.setDirection(constants.agitateRightDirection);
         agitateMotorRight.setDirection(constants.agitateLeftDirection);
+    }
+
+    public void stop() {
+        overHeadMotor.setPower(0);
+        agitateMotorLeft.setPosition(0);
+        agitateMotorRight.setPosition(0);
     }
 }

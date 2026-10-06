@@ -9,7 +9,7 @@ public class collectorConstants {
     public String agitateRightID = "Agitate Right";
 
     //Overhead speed
-    public double overheadSpeed = .5;
+    public double overheadSpeed = 1;
 
     //Servo direction
     public Servo.Direction agitateLeftDirection = Servo.Direction.FORWARD;

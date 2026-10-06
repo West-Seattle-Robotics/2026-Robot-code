@@ -18,9 +18,9 @@ public class RobotMain extends OpMode {
     @Override
     public void init() {
         // Set up parts
-        driveBase = new driveBase();
-        collector = new collector();
-        shooter = new shooter();
+        driveBase = new driveBase(hardwareMap);
+        collector = new collector(hardwareMap);
+        shooter = new shooter(hardwareMap);
 
         // Tell the driver station that setup is complete
         telemetry.addData("Status", "Initialized");
@@ -30,22 +30,30 @@ public class RobotMain extends OpMode {
     @Override
     public void loop() {
         //Set part movements to controller inputs
-        driveBase.drive(-gamepad1.left_stick_y, -gamepad1.right_stick_y);
+        driveBase.drive(-gamepad1.left_stick_y, gamepad1.right_stick_y);
 
-        while(gamepad1.a) {
+        if (gamepad1.circle) {
             collector.intake();
+        } else {
+            collector.stop();
         }
 
-        while(gamepad1.b) {
+        if (gamepad1.cross) {
             collector.expel();
+        } else {
+            collector.stop();
         }
 
-        while(gamepad1.left_trigger_pressed) {
+        if (gamepad1.left_trigger_pressed) {
             shooter.index();
+        } else {
+            shooter.indexStop();
         }
 
-        while(gamepad1.right_trigger_pressed) {
+        if (gamepad1.right_trigger_pressed) {
             shooter.shoot();
+        } else {
+            shooter.shootStop();
         }
         // Display current information back to the controller screen TODO: Later
 

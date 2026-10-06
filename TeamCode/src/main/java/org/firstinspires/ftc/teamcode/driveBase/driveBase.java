@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.driveBase;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 /** The Drive Base Class*/
 public class driveBase {
@@ -10,7 +11,7 @@ public class driveBase {
     private DcMotor frontLeft;
     private DcMotor frontRight;
     /** The drive class contains all of the drive base motors and methods to make it drive*/
-    public driveBase () {
+    public driveBase (HardwareMap hardwareMap) {
         frontLeft = hardwareMap.get(DcMotor.class, new driveConstants().frontLeft);
         frontRight = hardwareMap.get(DcMotor.class, new driveConstants().frontRight);
     }
