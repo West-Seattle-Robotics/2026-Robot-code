@@ -12,5 +12,5 @@ public class shooterConstants {
     public double flyhweelSpeed = 1;
 
     // Servo direction
-    public Servo.Direction indexerDirection = Servo.Direction.FORWARD;
+    public double indexerPower = -1;
 }

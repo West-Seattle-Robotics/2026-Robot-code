@@ -12,6 +12,6 @@ public class collectorConstants {
     public double overheadSpeed = 1;
 
     //Servo direction
-    public Servo.Direction agitateLeftDirection = Servo.Direction.FORWARD;
-    public Servo.Direction agitateRightDirection = Servo.Direction.REVERSE;
+    public double agitateLeftPower = 1;
+    public double agitateRightPower = -1;
 }

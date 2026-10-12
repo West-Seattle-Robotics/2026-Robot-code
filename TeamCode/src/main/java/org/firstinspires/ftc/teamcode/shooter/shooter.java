@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.shooter;
 
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
 
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -11,7 +12,7 @@ public class shooter {
 
     //Motors
     private DcMotor flywheel;
-    private Servo indexer;
+    private CRServo indexer;
 
     //Constants
     private shooterConstants constants;
@@ -21,12 +22,12 @@ public class shooter {
         constants = new shooterConstants();
 
         flywheel = hardwareMap.get(DcMotor.class, constants.flywheelID);
-        indexer = hardwareMap.get(Servo.class, constants.indexer);
+        indexer = hardwareMap.get(CRServo.class, constants.indexer);
     }
 
     /** Indexes balls in*/
     public void index () {
-        indexer.setDirection(constants.indexerDirection);
+        indexer.setPower(constants.indexerPower);
     }
 
     /** Shoots the balls using flywheel*/
@@ -35,7 +36,7 @@ public class shooter {
     }
 
     public void indexStop() {
-        indexer.setPosition(0);
+        indexer.setPower(0);
     }
 
     public void shootStop() {
