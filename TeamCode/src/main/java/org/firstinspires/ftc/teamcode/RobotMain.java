@@ -10,7 +10,7 @@ public class RobotMain extends OpMode {
     //robotContainer is where we will initiate all of our classes and commands
     RobotContainer robotContainer;
     public void init() {
-        robotContainer = new RobotContainer(hardwareMap);
+        robotContainer = new RobotContainer(hardwareMap, gamepad1, gamepad2);
     }
 
     // This will constantly run the periodic method in robotContainer, if you want your command to
