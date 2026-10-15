@@ -5,10 +5,10 @@ import java.util.function.DoubleSupplier;
 // This is a command, it runs periodically* and controls a class
 public class DriveCommand {
 
-    TankDrivebase drivebase;
+    private TankDrivebase drivebase;
 
-    DoubleSupplier leftJoyY;
-    DoubleSupplier rightJoyY;
+    private DoubleSupplier leftJoyY;
+    private DoubleSupplier rightJoyY;
 
     // DriveCommand will be passed a TankDrivebase when it's initialized in RobotContainer
     public DriveCommand(TankDrivebase drivebase, DoubleSupplier leftJoyY, DoubleSupplier rightJoyY) {
