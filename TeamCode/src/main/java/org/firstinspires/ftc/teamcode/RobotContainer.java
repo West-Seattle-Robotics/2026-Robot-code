@@ -5,6 +5,10 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.collector.Collector;
 import org.firstinspires.ftc.teamcode.collector.CollectorComand;
+import org.firstinspires.ftc.teamcode.shooter.Flywheel;
+import org.firstinspires.ftc.teamcode.shooter.Indexer;
+import org.firstinspires.ftc.teamcode.shooter.Shooter;
+import org.firstinspires.ftc.teamcode.shooter.ShooterCommand;
 import org.firstinspires.ftc.teamcode.tankDrive.DriveCommand;
 import org.firstinspires.ftc.teamcode.tankDrive.TankDrivebase;
 
@@ -19,13 +23,18 @@ public class RobotContainer {
 
     Gamepad gamepad1;
     Gamepad gamepad2;
+
+    ShooterCommand shooterCommand;
+    Shooter shooter;
+    Indexer indexer;
+    Flywheel flywheel;
+
     //Hardware map is only accessible from the OpMode so if we want to create a new piece of
     // hardware we have to reference the hardware map from RobotMain
     public RobotContainer(HardwareMap hardwareMap, Gamepad gamepad1, Gamepad gamepad2) {
         // and here is where we will initiate them
         this.gamepad1 = gamepad1;
         this.gamepad2 = gamepad2;
-
 
         tankDrivebase = new TankDrivebase(hardwareMap);
         driveCommand = new DriveCommand(
@@ -36,6 +45,11 @@ public class RobotContainer {
         collector = new Collector(hardwareMap);
         collectorComand = new CollectorComand(collector);
 
+        flywheel = new Flywheel(hardwareMap);
+        indexer = new Indexer(hardwareMap);
+        shooter = new Shooter(flywheel, indexer);
+        shooterCommand = new ShooterCommand(shooter);
+
     }
 
     // any method called in RobotContainer.periodic will be run constantly by RobotMain, place any
@@ -43,6 +57,7 @@ public class RobotContainer {
 
     public void periodic(){
         driveCommand.periodic();
+        shooterCommand.periodic();
 
         //Button bindings
         if (gamepad1.circle) {
@@ -59,6 +74,11 @@ public class RobotContainer {
             collectorComand.stop();
         }
 
-
+        if(gamepad1.left_trigger_pressed) {
+            shooterCommand.runIndexer();
+        }
+        if(gamepad1.right_trigger_pressed) {
+            shooterCommand.runFlywheel();
+        }
     }
 }

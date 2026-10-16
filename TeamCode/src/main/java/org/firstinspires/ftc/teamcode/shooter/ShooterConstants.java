@@ -4,7 +4,7 @@ public class ShooterConstants {
 
     //Motor IDs
     public String flywheelID = "Flywheel";
-    public String indexer = "IndexerID";
+    public String indexerID = "IndexerID";
 
     // Flywheel power
     public double flyhweelSpeed = 1;

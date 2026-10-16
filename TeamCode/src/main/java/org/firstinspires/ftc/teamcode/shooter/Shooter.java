@@ -18,10 +18,10 @@ public class Shooter {
     }
 
     public void setFlywheelPower(double power) {
-        flywheel.setPower(power);
+        flywheel.setFlywheelPower(power);
     }
 
     public void setIndexerPower(double power) {
-        indexer.setPower(power);
+        indexer.setIndexerPower(power);
     }
 }
