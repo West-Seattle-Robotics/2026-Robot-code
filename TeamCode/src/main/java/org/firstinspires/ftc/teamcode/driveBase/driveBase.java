@@ -21,7 +21,7 @@ public class driveBase {
      * @param rightSpeed
      * */
     public void drive (double leftSpeed, double rightSpeed) {
-        frontLeft.setPower(leftSpeed);
-        frontRight.setPower(rightSpeed);
+        frontLeft.setPower(leftSpeed * 0.8);
+        frontRight.setPower(rightSpeed * 0.8);
     }
 }

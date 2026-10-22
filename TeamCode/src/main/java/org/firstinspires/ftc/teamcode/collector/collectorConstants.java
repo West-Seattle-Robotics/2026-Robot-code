@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.collector;
 
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class collectorConstants {
+public class  collectorConstants {
     //Motor names
     public String overheadID = "Overhead";
     public String agitateLeftID = "Agitate Left";

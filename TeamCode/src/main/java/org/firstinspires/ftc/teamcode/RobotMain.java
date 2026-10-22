@@ -30,7 +30,7 @@ public class RobotMain extends OpMode {
     @Override
     public void loop() {
         //Set part movements to controller inputs
-        driveBase.drive(-gamepad1.left_stick_y, gamepad1.right_stick_y);
+        driveBase.drive(gamepad1.left_stick_y, -gamepad1.right_stick_y);
 
         if (gamepad1.circle) {
             collector.intake();

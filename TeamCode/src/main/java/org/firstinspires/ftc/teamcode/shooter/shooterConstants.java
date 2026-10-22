@@ -9,7 +9,7 @@ public class shooterConstants {
     public String indexer = "IndexerID";
 
     // Flywheel Speed
-    public double flyhweelSpeed = 1;
+    public double flyhweelSpeed = 0.6;
 
     // Servo direction
     public double indexerPower = -1;
