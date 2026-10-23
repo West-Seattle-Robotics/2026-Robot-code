@@ -30,6 +30,11 @@ public class shooter {
         indexer.setPower(constants.indexerPower);
     }
 
+    /** reverse index*/
+    public void indexReverse () {
+        indexer.setPower(-constants.indexerPower);
+    }
+
     /** Shoots the balls using flywheel*/
     public void shoot () {
         flywheel.setPower(constants.flyhweelSpeed);

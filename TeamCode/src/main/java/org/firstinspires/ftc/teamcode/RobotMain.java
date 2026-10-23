@@ -50,6 +50,20 @@ public class RobotMain extends OpMode {
             shooter.indexStop();
         }
 
+        if (gamepad1.left_trigger_pressed) {
+            shooter.index();
+        } else {
+            shooter.indexStop();
+        }
+/*
+        //Reverse pinwheel?
+        if (gamepad1.left_bumper) {
+            shooter.indexReverse();
+        } else {
+            shooter.indexStop();
+        }
+ */
+
         if (gamepad1.right_trigger_pressed) {
             shooter.shoot();
         } else {
