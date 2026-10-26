@@ -8,7 +8,8 @@ public class NilsBotDrive {
     private DcMotor leftDrive;
     private DcMotor rightDrive;
 
-    //map hardware and such
+    //map hardware and such blup
+    //blup blup
     public NilsBotDrive(HardwareMap hardwareMap){
         leftDrive = hardwareMap.get(DcMotor.class, "leftDrive");
         rightDrive = hardwareMap.get(DcMotor.class, "rightDrive");
