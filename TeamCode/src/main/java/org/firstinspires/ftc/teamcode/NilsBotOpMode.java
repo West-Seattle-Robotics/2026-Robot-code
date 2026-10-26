@@ -1,15 +1,17 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;import com.qualcomm.robotcore.hardware.DcMotor;import org.firstinspires.ftc.teamcode.drive.BotDrive;
-public class BotOpMode extends OpMode {
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+
+import org.firstinspires.ftc.teamcode.drive.NilsBotDrive;
+public class NilsBotOpMode extends OpMode {
 
     //bot... drives.... drive things... send tweet
-    public BotDrive driveBase;
+    public NilsBotDrive driveBase;
 
     //thing that does a thing (initiation stuff)
     @Override
     public void init() {
-        driveBase = new BotDrive(hardwareMap);
+        driveBase = new NilsBotDrive(hardwareMap);
     }
 
     //

@@ -3,13 +3,13 @@ package org.firstinspires.ftc.teamcode.drive;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class BotDrive {
+public class NilsBotDrive {
     //motors and such
     private DcMotor leftDrive;
     private DcMotor rightDrive;
 
     //map hardware and such
-    public BotDrive (HardwareMap hardwareMap){
+    public NilsBotDrive(HardwareMap hardwareMap){
         leftDrive = hardwareMap.get(DcMotor.class, "leftDrive");
         rightDrive = hardwareMap.get(DcMotor.class, "rightDrive");
     }
