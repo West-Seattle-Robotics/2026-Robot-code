@@ -23,5 +23,9 @@ public class driveBase {
     public void drive (double leftSpeed, double rightSpeed) {
         frontLeft.setPower(leftSpeed * 0.8);
         frontRight.setPower(rightSpeed * 0.8);
+        /*
+        frontLeft.setPower(Math.pow(leftSpeed, 3));
+        frontRight.setPower(Math.pow(rightSpeed, 3));
+         */
     }
 }

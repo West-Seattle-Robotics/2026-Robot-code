@@ -30,41 +30,42 @@ public class RobotMain extends OpMode {
     @Override
     public void loop() {
         //Set part movements to controller inputs
-        driveBase.drive(gamepad1.left_stick_y, -gamepad1.right_stick_y);
+        driveBase.drive(-gamepad1.left_stick_y, gamepad1.right_stick_y);
+        driveBase.drive(gamepad2.left_stick_y, -gamepad2.right_stick_y);
 
-        if (gamepad1.circle) {
+        if (gamepad1.circle || gamepad2.circle) {
             collector.intake();
         } else {
             collector.stop();
         }
 
-        if (gamepad1.cross) {
+        if (gamepad1.cross || gamepad2.cross) {
             collector.expel();
         } else {
             collector.stop();
         }
 
-        if (gamepad1.left_trigger_pressed) {
+        if (gamepad1.left_trigger_pressed || gamepad2.left_trigger_pressed) {
             shooter.index();
         } else {
             shooter.indexStop();
         }
 
-        if (gamepad1.left_trigger_pressed) {
+        if (gamepad1.left_trigger_pressed || gamepad2.left_trigger_pressed) {
             shooter.index();
         } else {
             shooter.indexStop();
         }
-/*
-        //Reverse pinwheel?
-        if (gamepad1.left_bumper) {
+
+        //left_bumper or leftBumperWasPressed - moves in bursts(?)
+        if (gamepad1.leftBumperWasPressed() || gamepad2.leftBumperWasPressed()) {
             shooter.indexReverse();
         } else {
             shooter.indexStop();
         }
- */
 
-        if (gamepad1.right_trigger_pressed) {
+
+        if (gamepad1.right_trigger_pressed || gamepad2.right_trigger_pressed) {
             shooter.shoot();
         } else {
             shooter.shootStop();

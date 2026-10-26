@@ -13,7 +13,6 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Robot stops after 1.5 seconds
  */
 @Autonomous(name="Moves Forward - AutoOp Mode", group="Iterative Opmode", preselectTeleOp = "Main Teleop Mode")
-@Disabled
 public class NotNullAuto extends LinearOpMode {
     private DcMotor leftMotor   = null;
     private DcMotor rightMotor  = null;

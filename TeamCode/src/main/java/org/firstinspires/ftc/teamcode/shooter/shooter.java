@@ -37,7 +37,7 @@ public class shooter {
 
     /** Shoots the balls using flywheel*/
     public void shoot () {
-        flywheel.setPower(constants.flyhweelSpeed);
+        flywheel.setPower(constants.flywheelSpeed);
     }
 
     public void indexStop() {
