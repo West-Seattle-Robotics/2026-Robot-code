@@ -14,19 +14,27 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  */
 @Autonomous(name="Moves Forward - AutoOp Mode", group="Iterative Opmode", preselectTeleOp = "Main Teleop Mode")
 public class NotNullAuto extends LinearOpMode {
+    //Motors
     private DcMotor leftMotor   = null;
     private DcMotor rightMotor  = null;
 
+    //Timer to measure movement
     private ElapsedTime runtime = new ElapsedTime();
 
+    //Movement speed
     static final double FORWARD_SPEED = 0.2;
 
+    /**
+     * Moves robot forward 1.5 seconds via time
+     */
     @Override
     public void runOpMode()
     {
+        //sets motors
         leftMotor  = hardwareMap.get(DcMotor.class, "FrontLeft");
         rightMotor = hardwareMap.get(DcMotor.class, "FrontRight");
 
+        //set motor direction
         leftMotor.setDirection(DcMotor.Direction.REVERSE);
         rightMotor.setDirection(DcMotor.Direction.FORWARD);
 

@@ -7,6 +7,10 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
+
+/**
+ * It does nothing
+ */
 @Autonomous(name="Does Nothing - AutoOp Mode", group="Iterative Opmode", preselectTeleOp = "Main Teleop Mode")
 @Disabled
 public class NullAuto extends OpMode {
