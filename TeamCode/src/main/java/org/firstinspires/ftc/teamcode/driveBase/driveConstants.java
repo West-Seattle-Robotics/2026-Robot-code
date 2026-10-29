@@ -5,6 +5,12 @@ public class driveConstants {
     public String frontLeft = "FrontLeft";
     public String frontRight = "FrontRight";
 
+    //added
+    public String backRight = "BackRight";
+
+    public String backLeft = "BackLeft";
+    //end added
+
     //speed percentage
     public double speedPercentage = 0.8;
 }
