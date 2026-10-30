@@ -5,20 +5,27 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class NilsBotDrive {
     //motors and such
-    private DcMotor leftDrive;
-    private DcMotor rightDrive;
+    private DcMotor frontLeftDrive;
+    private DcMotor frontRightDrive;
+    private DcMotor backLeftDrive;
+    private DcMotor backRightDrive;
 
     //map hardware and such blup
     //blup blup
     public NilsBotDrive(HardwareMap hardwareMap){
-        leftDrive = hardwareMap.get(DcMotor.class, "leftDrive");
-        rightDrive = hardwareMap.get(DcMotor.class, "rightDrive");
+        frontLeftDrive = hardwareMap.get(DcMotor.class, NilsBotConstants.frontLeftDriveConstant);
+        frontRightDrive = hardwareMap.get(DcMotor.class, NilsBotConstants.frontRightDriveConstant);
+        backLeftDrive = hardwareMap.get(DcMotor.class, NilsBotConstants.backLeftDriveConstant);
+        backRightDrive = hardwareMap.get(DcMotor.class, NilsBotConstants.backRightDriveConstant);
     }
 
-    public void drive (double leftSpeed, double rightSpeed){
-        leftDrive.setPower(leftSpeed);
-        rightDrive.setPower(rightSpeed);
+    public void drive (double frontLeftSpeed, double frontRightSpeed, double backLeftSpeed, double backRightSpeed){
+        double x;
+        double y;
+        frontLeftDrive.setPower(frontLeftSpeed);
+        frontRightDrive.setPower(frontRightSpeed);
+        backLeftDrive.setPower(speed);
+        backRightDrive.setPower(speed);
+
     }
-
-
 }
