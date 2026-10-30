@@ -1,5 +1,7 @@
+/*
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -8,6 +10,7 @@ import org.firstinspires.ftc.teamcode.driveBase.driveBase;
 import org.firstinspires.ftc.teamcode.shooter.shooter;
 
 @TeleOp(name="Main Teleop Mode", group="Iterative Opmode")
+@Disabled
 public class RobotMain extends OpMode {
     // Declare your robot's physical parts here
     private driveBase driveBase;
@@ -74,3 +77,4 @@ public class RobotMain extends OpMode {
 
     }
 }
+*/

@@ -1,12 +1,10 @@
-package org.firstinspires.ftc.teamcode.driveBase;
-
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
+package org.firstinspires.ftc.teamcode.drivebase;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 /** The Drive Base Class*/
-public class driveBase {
+public class DriveBase {
     //Motors
     private DcMotor frontLeft;
     private DcMotor frontRight;
@@ -15,10 +13,9 @@ public class driveBase {
     private double speedPercentage;
 
     /** The drive class contains all of the drive base motors and methods to make it drive*/
-    public driveBase (HardwareMap hardwareMap) {
-        frontLeft = hardwareMap.get(DcMotor.class, new driveConstants().frontLeft);
-        frontRight = hardwareMap.get(DcMotor.class, new driveConstants().frontRight);
-        speedPercentage = new driveConstants().speedPercentage;
+    public DriveBase (HardwareMap hardwareMap) {
+        frontLeft = hardwareMap.get(DcMotor.class, new DriveConstants().frontLeft);
+        frontRight = hardwareMap.get(DcMotor.class, new DriveConstants().frontRight);
     }
 
     /** The drive method, takes values between -1 to +1 and gives the motors a speed
