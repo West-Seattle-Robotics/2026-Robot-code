@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode.drivebase;
 
-import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
@@ -31,10 +30,10 @@ public class MecanumDrive
         backRight = hardwareMap.get(DcMotor.class, "BackRight");
          */
 
-        frontLeft = hardwareMap.get(DcMotor.class, new DriveConstants().frontLeft);
-        frontRight = hardwareMap.get(DcMotor.class,new DriveConstants().frontRight);
-        backLeft = hardwareMap.get(DcMotor.class, new DriveConstants().backLeft);
-        backRight = hardwareMap.get(DcMotor.class, new DriveConstants().backRight);
+        frontLeft = hardwareMap.get(DcMotor.class, DriveConstants.frontLeft);
+        frontRight = hardwareMap.get(DcMotor.class, DriveConstants.frontRight);
+        backLeft = hardwareMap.get(DcMotor.class, DriveConstants.backLeft);
+        backRight = hardwareMap.get(DcMotor.class, DriveConstants.backRight);
 
         //Mirroring might be an issue, test with and without
         frontLeft.setDirection(DcMotor.Direction.REVERSE);
