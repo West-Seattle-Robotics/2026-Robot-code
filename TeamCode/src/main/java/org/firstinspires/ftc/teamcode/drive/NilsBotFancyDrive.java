@@ -19,8 +19,8 @@ public class NilsBotFancyDrive {
         backLeftDrive = hardwareMap.get(DcMotor.class, NilsBotConstants.backLeftDriveConstant);
     }
 
+    //ALL DIRECTIONAL DRIVE RAHHHH
     public void drive (double motorX, double motorY){
-        {
             double powerX = motorX;
             double powerY = motorY;
             double powerConstant = Math.atan2(powerX, powerY);
@@ -49,7 +49,13 @@ public class NilsBotFancyDrive {
             backRightDrive.setPower(finalX);
             frontRightDrive.setPower(finalY);
             backLeftDrive.setPower(finalY);
-            ;
-        }
+    }
+
+    //this one rotates
+    public void rotate (Double direction){
+        frontLeftDrive.setPower(direction);
+        backRightDrive.setPower(-direction);
+        frontRightDrive.setPower(-direction);
+        backLeftDrive.setPower(direction);
     }
 }

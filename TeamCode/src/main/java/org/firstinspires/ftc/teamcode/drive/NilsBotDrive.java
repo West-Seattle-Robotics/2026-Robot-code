@@ -24,8 +24,8 @@ public class NilsBotDrive {
         double y;
         frontLeftDrive.setPower(frontLeftSpeed);
         frontRightDrive.setPower(frontRightSpeed);
-        backLeftDrive.setPower(speed);
-        backRightDrive.setPower(speed);
+        backLeftDrive.setPower(backLeftSpeed);
+        backRightDrive.setPower(backRightSpeed);
 
     }
 }
