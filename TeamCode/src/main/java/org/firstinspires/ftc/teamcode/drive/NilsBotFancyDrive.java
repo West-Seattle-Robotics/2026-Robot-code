@@ -1,24 +1,31 @@
 package org.firstinspires.ftc.teamcode.drive;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class NilsBotFancyDrive {
     //motors and such
-    private DcMotor frontLeftDrive;
-    private DcMotor frontRightDrive;
-    private DcMotor backLeftDrive;
-    private DcMotor backRightDrive;
+    private DcMotorEx frontLeftDrive;
+    private DcMotorEx frontRightDrive;
+    private DcMotorEx backLeftDrive;
+    private DcMotorEx backRightDrive;
 
     //map hardware and such blup
     //blup blup
     public NilsBotFancyDrive(HardwareMap hardwareMap){
-        frontLeftDrive = hardwareMap.get(DcMotor.class, NilsBotConstants.frontLeftDriveConstant);
-        backRightDrive = hardwareMap.get(DcMotor.class, NilsBotConstants.backRightDriveConstant);
-        frontRightDrive = hardwareMap.get(DcMotor.class, NilsBotConstants.frontRightDriveConstant);
-        backLeftDrive = hardwareMap.get(DcMotor.class, NilsBotConstants.backLeftDriveConstant);
+        frontLeftDrive = hardwareMap.get(DcMotorEx.class, NilsBotConstants.frontLeftDriveConstant);
+        backRightDrive = hardwareMap.get(DcMotorEx.class, NilsBotConstants.backRightDriveConstant);
+        frontRightDrive = hardwareMap.get(DcMotorEx.class, NilsBotConstants.frontRightDriveConstant);
+        backLeftDrive = hardwareMap.get(DcMotorEx.class, NilsBotConstants.backLeftDriveConstant);
     }
-
+    // Proportional Integral Derivative
+    public double PID(double speed, DcMotorEx motor){
+        Double Kp = NilsBotConstants.Kp;
+        Double processVariable = motor.getVelocity();
+        Double error = speed - processVariable;
+        return Kp * error;
+    }
     //ALL DIRECTIONAL DRIVE RAHHHH
     public void drive (double motorX, double motorY){
             double powerX = motorX;
@@ -45,10 +52,10 @@ public class NilsBotFancyDrive {
                 finalY *= powerX;
                 finalX *= powerX;
             }
-            frontLeftDrive.setPower(finalX);
-            backRightDrive.setPower(finalX);
-            frontRightDrive.setPower(finalY);
-            backLeftDrive.setPower(finalY);
+            frontLeftDrive.setPower(finalX - PID(finalX, frontLeftDrive));
+            backRightDrive.setPower(finalX - PID(finalX, backRightDrive));
+            frontRightDrive.setPower(finalY - PID(finalY, frontRightDrive));
+            backLeftDrive.setPower(finalY - PID(finalY, backLeftDrive));
     }
 
     //this one rotates
