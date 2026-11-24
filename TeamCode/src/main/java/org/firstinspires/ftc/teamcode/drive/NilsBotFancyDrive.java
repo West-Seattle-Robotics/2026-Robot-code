@@ -19,12 +19,28 @@ public class NilsBotFancyDrive {
         frontRightDrive = hardwareMap.get(DcMotorEx.class, NilsBotConstants.frontRightDriveConstant);
         backLeftDrive = hardwareMap.get(DcMotorEx.class, NilsBotConstants.backLeftDriveConstant);
     }
+    public double ConstantRule(Double a){
+        a = 0.0;
+        return a;
+    }
+
     // Proportional Integral Derivative
     public double PID(double speed, DcMotorEx motor){
+        //Proportional
         Double Kp = NilsBotConstants.Kp;
         Double processVariable = motor.getVelocity();
         Double error = speed - processVariable;
-        return Kp * error;
+        Double proportional = Kp * error;
+
+        //Integral WIP
+        Double Ki = NilsBotConstants.Ki;
+        Double integral = Ki;
+
+        //Derivative WIP
+        Double Kd = NilsBotConstants.Kd;
+        Double dih = ConstantRule(error) / ConstantRule(speed);
+        Double derivative = Kd * dih;
+        return proportional + integral + derivative;
     }
     //ALL DIRECTIONAL DRIVE RAHHHH
     public void drive (double motorX, double motorY){
